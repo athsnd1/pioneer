@@ -1,0 +1,49 @@
+name: Frontend CI
+
+on:
+    push:
+        branches: 
+            - main
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+    
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 24
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Setup Linter
+              run: npm run lint
+
+            - name: Run unit and integration test
+              run: npm run test
+
+            - name: Build project
+              run: npm run build
+              env:
+                VITE_BACKEND_URL: ${{ vars.VITE_BACKEND_URL }}
+                
+            - name: Install playwright browsers
+              run: npx playwright install --with-deps
+
+            - name: Run playwright tests
+              run: npx playwright test
+
+            - name: Upload playwright report
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: playwright-report
+                path: playwright-report/
