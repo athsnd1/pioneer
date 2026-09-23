@@ -31,9 +31,13 @@ export default function Navbar({ icons = [] }: Props) {
 
             { icons.map(({ label, icon: Icon, link }, index) => (
               
-              <NavLink key={index} to={ link ? link : "/" } 
-              className={({ isActive }) => `h-max flex flex-col gap-0.5 items-center hover:opacity-75 
-              hover:scale-95 transition cursor-pointer px-1.5 py-1 ${isActive ? "bg-[var(--main-color)] rounded-md text-white" : ""}`} >
+              <NavLink 
+                key={index} 
+                to={ link ? link : "/" } 
+                end
+                className={({ isActive }) => `h-max flex flex-col gap-0.5 items-center hover:opacity-75 
+                hover:scale-95 transition cursor-pointer px-1.5 py-1 ${isActive ? "bg-[var(--main-color)] rounded-md text-white" : ""}`} 
+              >
 
                 {({ isActive }) => (
                   <>

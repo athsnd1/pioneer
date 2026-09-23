@@ -58,7 +58,7 @@ export default function ReportCard({id, hours = 0, visits = 0, studies = 0, vide
 
         <div className="hover:opacity-85 transition-all flex flex-col md:flex-row items-center justify-center gap-5 w-full md:border-t-1 border-gray-300 md:p-3" >
             <BiTrash className="text-2xl text-red-700 hover:scale-101" onClick={(e) => { e.stopPropagation(); onDelete(); }}/>
-            <BiEditAlt className="text-2xl text-orange-600 hover:scale-101" onClick={(e) => { e.stopPropagation(); navigate(`/edit/${id}`);}}/>
+            <BiEditAlt className="text-2xl text-orange-600 hover:scale-101" onClick={(e) => { e.stopPropagation(); navigate(`/dashboard/edit/${id}`);}}/>
         </div>
 
     </div>

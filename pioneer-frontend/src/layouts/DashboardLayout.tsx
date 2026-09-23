@@ -13,9 +13,9 @@ export default function DashboardLayout() {
   const location = useLocation();
 
   const icons = [
-    { label: "Home", icon: BiHome, link: "/" },
-    { label: "Logs", icon: TbListCheck, link: "logs" },
-    { label: "Add", icon: CgAdd, link: "create" },
+    { label: "Home", icon: BiHome, link: "/dashboard" },
+    { label: "Logs", icon: TbListCheck, link: "/dashboard/logs" },
+    { label: "Add", icon: CgAdd, link: "/dashboard/create" },
   ]
 
   if (navigation.state === "loading") {

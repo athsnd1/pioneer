@@ -44,7 +44,7 @@ export default function StudentCard({ name = "Student", address = "1 House Rd", 
 
                 <HiTrash className="text-red-700 text-xl w-[24px] h-[24px] cursor-pointer hover:opacity-85 hover:scale-95" onClick={(e) => {e.stopPropagation(); onDelete();}}/>
 
-                <BiEditAlt className="text-green-700 text-xl w-[24px] h-[24px] cursor-pointer hover:opacity-85 hover:scale-95" onClick={(e) => {e.stopPropagation(); navigate(`/edit-student/${studentId}`)}}/>
+                <BiEditAlt className="text-green-700 text-xl w-[24px] h-[24px] cursor-pointer hover:opacity-85 hover:scale-95" onClick={(e) => {e.stopPropagation(); navigate(`/dashboard/edit-student/${studentId}`)}}/>
 
             </div>
         </div>

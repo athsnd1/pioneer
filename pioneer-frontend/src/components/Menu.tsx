@@ -44,14 +44,14 @@ export default function Menu({ closeMenu }: Props) {
                 { collapsed && 
                 <div className="relative before:absolute before-content-[''] before:h-full before:w-[1px] before:bg-gray-300 before:-left-2 ml-4 flex flex-col items-start pt-1.5 transition-all">
 
-                    <div className="flex items-center gap-1 text-sm hover:bg-gray-100 p-2 rounded-lg text-emerald-600" onClick={() => { navigate("/add-student"); closeMenu(); }}> <BsPlusCircle /> <span>Add Student</span> </div>
+                    <div className="flex items-center gap-1 text-sm hover:bg-gray-100 p-2 rounded-lg text-emerald-600" onClick={() => { navigate("/dashboard/add-student"); closeMenu(); }}> <BsPlusCircle /> <span>Add Student</span> </div>
 
-                    <div className="flex items-center gap-1 text-sm hover:bg-gray-100 p-2 rounded-lg text-violet-600" onClick={() => { navigate("/students"); closeMenu();}}> <FiEye /> <span>View Students</span> </div>
+                    <div className="flex items-center gap-1 text-sm hover:bg-gray-100 p-2 rounded-lg text-violet-600" onClick={() => { navigate("/dashboard/students"); closeMenu();}}> <FiEye /> <span>View Students</span> </div>
                 </div>}
 
             </div>
 
-            <div className="flex items-center gap-1 cursor-pointer pl-4 pb-2 pt-2 border-b-1 w-full border-gray-300 hover:bg-gray-50 transition-all text-amber-600" onClick={() => { navigate("/monthly-stats"); closeMenu(); }}> <HiOutlineCalendarDays /> <span>Monthly Stats</span> </div>
+            <div className="flex items-center gap-1 cursor-pointer pl-4 pb-2 pt-2 border-b-1 w-full border-gray-300 hover:bg-gray-50 transition-all text-amber-600" onClick={() => { navigate("/dashboard/monthly-stats"); closeMenu(); }}> <HiOutlineCalendarDays /> <span>Monthly Stats</span> </div>
         </div>
 
         <div className="text-red-700 text-sm flex items-center gap-1 font-sora p-4 pl-4 cursor-pointer rounded-b-lg hover:bg-red-50 transition-all" onClick={() => { setLogoutPressed(true) }}>
